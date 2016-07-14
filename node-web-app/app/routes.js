@@ -24,6 +24,15 @@ module.exports = function (app) {
   });
 
   // route to handle creating goes here (app.post)
+  app.post('/api/nerds', function (req,res) {
+    var thing = req.body;
+    console.log(req);
+    Nerd.create (thing, function (err, thing) {
+      if (err) return handleError (err);
+      
+     res.json(thing);
+    });
+  });
   // route to handle delete goes here (app.delete)
 
   // frontend routes =========================================================
