@@ -12,6 +12,9 @@ const methodOverride  = require('method-override');
 const db              = require('./config/db');
 const PORT = 80;
 
+// connect to our mongoDB database 
+mongoose.connect(db.url);
+
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
 app.use(bodyParser.json()); 
