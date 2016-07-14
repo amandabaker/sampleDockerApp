@@ -11,6 +11,8 @@ WORKDIR /usr/src/app
 # COPY server.js /usr/src/app
 COPY . /usr/src/app
 RUN npm install
+RUN npm install -g bower
+RUN bower --allow-root install
 
 # Bundle app source
 EXPOSE 80
