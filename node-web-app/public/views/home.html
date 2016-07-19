@@ -1,7 +1,23 @@
 <!-- public/views/home.html -->
 
-<div class="jumbotron text-center">
-  <h1>Home Page 4 Life</h1>
-
-  <p>{{ tagline }}</p>
+<form class="RandomTextForm" role="form">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="input-group">
+        <label for="RandomText">Put some words here:</label>
+        <input type="text" class="form-control" placeholder="Random Text" ng-model="randomText" aria-describedby="randomText">
+      </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <button type="submit" ng-click="getReverse(randomText)" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>{{reverse}}</h1>
+  </div>
+</div>
+<div ng-repeat="nerd in nerds track by $index">
+  {{nerd.name}}
 </div>
