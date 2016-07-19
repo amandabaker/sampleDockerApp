@@ -1,5 +1,5 @@
-// config/db.js 
+// config/db.js
 
 module.exports = {
-        url : 'http://marathon-lb-internal:10001'
-    }
+  url: 'mongodb://marathon-lb-internal.marathon.mesos:10001'
+}
