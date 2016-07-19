@@ -21,16 +21,22 @@ If this is not your goal, then you will likely have to change your steps a bit.
 
 To deploy the app, run the commands 
 
-```dcos marathon app add node-web-app.json```
+```
+dcos marathon app add node-web-app.json
+```
 
-```dcos marathon app add mongo.json```
+```
+dcos marathon app add mongo.json
+```
 
 These commands will pull the latest version of the app from DockerHub and push the containers to
 your cluster. 
 
 To scale the containers, run
 
-```dcos marathon app scale [app-name] [scale-size]```
+```
+dcos marathon app scale [app-name] [scale-size]
+```
 
 where `[app-name]` is either mongo or node-web-app and `[scale-size]` is the number of containers you
 want to scale up or down to. 
