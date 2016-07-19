@@ -1,0 +1,36 @@
+{
+    "id": "node-web-app",
+    "cpus": 0.5,
+    "mem": 512,
+    "instances": 1,
+    "container": {
+        "type": "DOCKER",
+        "docker": {
+            "image": "amandabaker/node-web-app",
+            "network": "BRIDGE",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "servicePort": 10000,
+                    "protocol": "tcp"
+                }
+            ],
+            "forcePullImage": true
+        }
+    },
+    "healthChecks": [{
+      "protocol": "HTTP",
+      "path": "/",
+      "portIndex": 0,
+      "timeoutSeconds": 10,
+      "gracePeriodSeconds": 10,
+      "intervalSeconds": 2,
+      "maxConsecutiveFailures": 10
+  }],
+    "labels":{
+        "HAPROXY_GROUP":"external",
+        "HAPROXY_0_VHOST":"abacsprodagents.westus.cloudapp.azure.com",
+        "HAPROXY_0_MODE":"http"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "mongo",
+  "cpus": 0.5,
+  "mem": 512.0,
+  "instances": 1, 
+  "container": 
+  {
+    "type": "DOCKER",
+    "docker": {
+      "image": "mongo"
+    }
+  },
+  "labels":{
+    "HAPROXY_GROUP": "internal"
+  }
+}
+
